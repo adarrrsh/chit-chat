@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .option {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .option:hover {
+            background-color: #0056b3;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .input-box input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .input-box button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .input-box button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="input-box">
+            <input type="text" id="username" placeholder="Enter username">
+            <input type="text" id="room-code" placeholder="Enter chat room ID">
+            <button class="btn-join" onclick="enterChatRoom()">Join Chat Room</button>
+        </div>
+    </div>
+
+    <script>
+        function enterChatRoom() {
+            const username = document.getElementById('username').value;
+            const roomCode = document.getElementById('room-code').value;
+            if (username.trim() && roomCode.trim()) {
+                window.location.href = `chatroom.html?room=${roomCode}&username=${username}`;
+            } else {
+                alert('Please enter both username and room code.');
+            }
+        }
+    </script>
+</body>
+</html>
