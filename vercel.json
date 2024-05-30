@@ -1,0 +1,7 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/socket.io", "dest": "http://localhost:3000" }
+    ]
+  }
+  
